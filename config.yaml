@@ -1,0 +1,15 @@
+proxies:
+  - id: 0
+    localAddr: ":13145"
+    remoteAddr: "btc.f2pool.com:1314"
+    user: "zcy0"
+
+  - id: 1
+    localAddr: ":13146"
+    remoteAddr: "eth.f2pool.com:6688"
+    user: "zcy1"
+
+  - id: 2
+    localAddr: ":13147"
+    remoteAddr: "127.0.0.1:10809"
+    user: "zcy2"
