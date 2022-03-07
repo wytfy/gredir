@@ -9,6 +9,7 @@ import (
 	"github.com/wytfy/gredir/handler"
 	"github.com/wytfy/gredir/initialize"
 	"log"
+	"net"
 	"sync"
 	"time"
 )
@@ -38,8 +39,13 @@ func main() {
 	for _, proxy := range proxies {
 		go func(p config.Proxy) {
 			defer wg.Done()
-			// listen, err := net.Listen("tcp", p.LocalAddr)
-			listen, err := tls.Listen("tcp", p.LocalAddr, tlsConfig)
+			var listen net.Listener
+			// 是否使用tls加密
+			if p.Tls == true {
+				listen, err = tls.Listen("tcp", p.LocalAddr, tlsConfig)
+			} else {
+				listen, err = net.Listen("tcp", p.LocalAddr)
+			}
 			if err != nil {
 				global.LOGGER.Errorf("[%v] Fail to listen the port: %v", p.User, err)
 			}

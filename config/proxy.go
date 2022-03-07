@@ -6,4 +6,5 @@ type Proxy struct {
 	RemoteAddr string `mapstructure:"remote_addr"`
 	User       string `mapstructure:"user"`
 	Date       string `mapstructure:"date"`
+	Tls        bool   `mapstructure:"tls"`
 }
