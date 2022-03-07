@@ -21,5 +21,5 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemclt start gredir
-systemclt enable gredir
+systemctl start gredir
+systemctl enable gredir
