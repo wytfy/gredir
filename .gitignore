@@ -1,2 +1,4 @@
 gredir.log
 gredir.pid
+server.key
+server.crt
