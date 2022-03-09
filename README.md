@@ -1,8 +1,6 @@
-
-
 # Gredir
 
-一个简洁的支持多用户多端口tcp转发工具，该工具支持作为大部分矿池的中转代理服务器。同时支持tls加密选项。该工具使用golang开发。
+一个支持多用户多端口tcp转发工具，该工具支持作为大部分矿池的中转代理服务器。同时支持tls加密选项。该工具使用golang开发。
 
 <!-- PROJECT SHIELDS -->
 
@@ -10,8 +8,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![GPL License][license-shield]][license-url]
 
 ## 目录
 
@@ -23,6 +20,22 @@
 
 ```shell
 tar xzvf gredir*.tar.gz && cd gredir && bash install.sh
+```
+
+### 生成自签名证书
+
+```shell
+# 创建根证书私钥，长度2048
+openssl genrsa -out ca.key 2048
+# 创建根证书
+openssl req -new -x509 -days 36500 -key ca.key -out ca.crt
+# 创建ssl证书私钥
+openssl genrsa -out server.key 2048
+# 创建ssl证书，xxxx改为奇数
+openssl req -new -key server.key -out server.csr
+mkdir dir demoCA &&cd demoCA&&mkdir newcerts&&echo 'xxxx' > serial &&touch index.txt&&cd ..
+# 用CA根证书签署ssl证书，生成server.crt与server.key
+openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key
 ```
 
 ### 配置说明
@@ -52,16 +65,14 @@ zcylove1995@gmail.com
 该项目签署了MIT 授权许可，详情请参阅 [LICENSE.txt](https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt)
 
 <!-- links -->
-[your-project-path]:shaojintian/Best_README_template
-[contributors-shield]: https://img.shields.io/github/contributors/shaojintian/Best_README_template.svg?style=flat-square
-[contributors-url]: https://github.com/shaojintian/Best_README_template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/shaojintian/Best_README_template.svg?style=flat-square
-[forks-url]: https://github.com/shaojintian/Best_README_template/network/members
-[stars-shield]: https://img.shields.io/github/stars/shaojintian/Best_README_template.svg?style=flat-square
-[stars-url]: https://github.com/shaojintian/Best_README_template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg
-[license-shield]: https://img.shields.io/github/license/shaojintian/Best_README_template.svg?style=flat-square
-[license-url]: https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/shaojintian
+[your-project-path]:wytfy/gredir
+[contributors-shield]: https://img.shields.io/github/contributors/wytfy/gredir.svg?style=flat-square
+[contributors-url]: https://github.com/wytfy/gredir/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/wytfy/gredir.svg?style=flat-square
+[forks-url]: https://github.com/wytfy/gredir/network/members
+[stars-shield]: https://img.shields.io/github/stars/wytfy/gredir.svg?style=flat-square
+[stars-url]: https://github.com/wytfy/gredir/stargazers
+[issues-shield]: https://img.shields.io/github/issues/wytfy/gredir.svg?style=flat-square
+[issues-url]: https://img.shields.io/github/issues/wytfy/gredir.svg
+[license-shield]: https://img.shields.io/github/license/wytfy/gredir.svg?style=flat-square
+[license-url]: https://github.com/wytfy/gredir/blob/master/LICENSE.txt
