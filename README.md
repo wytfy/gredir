@@ -12,9 +12,11 @@
 
 ## 目录
 
-- [安装](#部署)
+- [安装](#安装)
+- [生成自签名证书](#生成自签名证书)
 - [配置说明](#配置说明)
 - [作者](#作者)
+- [版权说明](#版权说明)
 
 ### 安装
 
@@ -62,7 +64,7 @@ zcylove1995@gmail.com
 
 ### 版权说明
 
-该项目签署了MIT 授权许可，详情请参阅 [LICENSE.txt](https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt)
+该项目签署了GPL 授权许可，详情请参阅 [LICENSE.txt](https://github.com/wytfy/gredir/blob/main/LICENSE)
 
 <!-- links -->
 [your-project-path]:wytfy/gredir
