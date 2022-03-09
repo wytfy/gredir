@@ -20,8 +20,8 @@ proxies:
     date: "2022-2-22"
     tls: false
 
-log: "./gredir.log"
+log: "/var/log/gredir.log"
 
 tls:
-  public_file: "server.crt"
-  private_file: "server.key"
+  public_file: "/usr/local/gredir/server.crt"
+  private_file: "/usr/local/gredir/server.key"

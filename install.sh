@@ -2,6 +2,7 @@
 # shellcheck disable=SC2268
 
 rm -rf /usr/local/gredir
+rm -f /etc/systemd/system/gredir.service
 mkdir /usr/local/gredir
 cp * /usr/local/gredir
 
