@@ -2,23 +2,16 @@ proxies:
   - id: 0
     local_addr: ":20000"
     remote_addr: "btc.f2pool.com:1314"
-    user: "zcy"
+    user: "user1"
     date: "2022-2-22"
     tls: true
 
   - id: 1
     local_addr: ":20001"
     remote_addr: "eth.f2pool.com:6688"
-    user: "xu"
+    user: "user2"
     date: "2022-2-22"
     tls: true
-
-  - id: 2
-    local_addr: ":20003"
-    remote_addr: "localhost:10809"
-    user: "v2ray"
-    date: "2022-2-22"
-    tls: false
 
 log: "/var/log/gredir.log"
 
