@@ -1,0 +1,20 @@
+proxies:
+  - id: 0
+    local_addr: ":20000"
+    remote_addr: "btc.f2pool.com:1314"
+    user: "user1"
+    date: "2022-2-22"
+    tls: true
+
+  - id: 1
+    local_addr: ":20001"
+    remote_addr: "eth.f2pool.com:6688"
+    user: "user2"
+    date: "2022-2-22"
+    tls: true
+
+log: "/var/log/gredir.log"
+
+tls:
+  public_file: "/usr/local/gredir/server.crt"
+  private_file: "/usr/local/gredir/server.key"
